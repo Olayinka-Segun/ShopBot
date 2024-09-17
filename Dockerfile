@@ -14,6 +14,9 @@ WORKDIR /app
 # Copy application files
 COPY . .
 
+# Ensure geckodriver has the correct permissions
+RUN chmod +x /usr/local/bin/geckodriver
+
 # Install Python dependencies
 RUN pip install -r requirements.txt
 
